@@ -79,6 +79,18 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.5.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.5.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
@@ -90,8 +102,29 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Priority Queue, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OptimizedPriorityQueue.4.1.1\lib\net45\Priority Queue.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Data, Version=3.6.61114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -143,11 +176,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="KancolleCore\KancolleBattle\Battle.cs" />
     <Compile Include="KancolleCore\KancolleGameData.cs" />
     <Compile Include="KancolleCore\KancolleGameDataContext.cs" />
+    <Compile Include="KancolleCore\KancolleNavigation\KancolleAction.cs" />
+    <Compile Include="KancolleCore\KancolleNavigation\KancolleActionEdge.cs" />
+    <Compile Include="KancolleCore\KancolleNavigation\KancolleActionExecutor.cs" />
     <Compile Include="KancolleCore\KancolleNavigation\KancolleScene.cs" />
+    <Compile Include="KancolleCore\KancolleNavigation\KancolleSceneNavigator.cs" />
+    <Compile Include="KancolleCore\KancolleNavigation\KancolleSceneRecognizer.cs" />
+    <Compile Include="KancolleCore\KancolleNavigation\KancolleWidgetPositions.cs" />
     <Compile Include="KancolleCore\KancolleRequestHandler.cs" />
     <Compile Include="KancolleCore\KancolleResponseFilter.cs" />
+    <Compile Include="KancolleCore\KancolleTask\KancolleTask.cs" />
+    <Compile Include="KancolleCore\KancolleTask\KancolleTaskExecutor.cs" />
+    <Compile Include="KancolleCore\KancolleTask\KancolleTaskResult.cs" />
+    <Compile Include="KancolleCore\KancolleTask\KancolleTaskResultType.cs" />
+    <Compile Include="KancolleCore\KancolleTask\ResponseHelper.cs" />
     <Compile Include="KancolleCore\KancolleUtils.cs" />
     <Compile Include="Logger\ConsoleLogger.cs" />
     <Compile Include="Logger\LogFactory.cs" />
@@ -194,6 +239,49 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Images\Comparison\Arsenal.bmp" />
+    <Resource Include="Resources\Images\Comparison\Battle_Back.bmp" />
+    <Resource Include="Resources\Images\Comparison\Battle_Compass.bmp" />
+    <Resource Include="Resources\Images\Comparison\Battle_Formation.bmp" />
+    <Resource Include="Resources\Images\Comparison\Battle_Next.bmp" />
+    <Resource Include="Resources\Images\Comparison\Battle_Night.bmp" />
+    <Resource Include="Resources\Images\Comparison\Battle_Return.bmp" />
+    <Resource Include="Resources\Images\Comparison\MainPort.png" />
+    <Resource Include="Resources\Images\Comparison\MainPort_Left.bmp" />
+    <Resource Include="Resources\Images\Comparison\MainPort_title.bmp" />
+    <Resource Include="Resources\Images\Comparison\MainPort_title.png" />
+    <Resource Include="Resources\Images\Comparison\Map.bmp" />
+    <Resource Include="Resources\Images\Comparison\Map_Decide.bmp" />
+    <Resource Include="Resources\Images\Comparison\Map_Start_False.bmp" />
+    <Resource Include="Resources\Images\Comparison\Map_Start_False2.bmp" />
+    <Resource Include="Resources\Images\Comparison\Map_Start_True.bmp" />
+    <Resource Include="Resources\Images\Comparison\Mission.bmp" />
+    <Resource Include="Resources\Images\Comparison\Mission_Decide.bmp" />
+    <Resource Include="Resources\Images\Comparison\Mission_Start_False.bmp" />
+    <Resource Include="Resources\Images\Comparison\Mission_Start_True.bmp" />
+    <Resource Include="Resources\Images\Comparison\Organize.bmp" />
+    <Resource Include="Resources\Images\Comparison\Organize_Change_Decide_False.bmp" />
+    <Resource Include="Resources\Images\Comparison\Organize_Change_Decide_True.bmp" />
+    <Resource Include="Resources\Images\Comparison\Organize_ShipSelect.bmp" />
+    <Resource Include="Resources\Images\Comparison\Organize_SortByNew.bmp" />
+    <Resource Include="Resources\Images\Comparison\Practice.bmp" />
+    <Resource Include="Resources\Images\Comparison\Quest.bmp" />
+    <Resource Include="Resources\Images\Comparison\Remodel.bmp" />
+    <Resource Include="Resources\Images\Comparison\Remodel_ItemList.bmp" />
+    <Resource Include="Resources\Images\Comparison\Remodel_ItemList_Decide_True.bmp" />
+    <Resource Include="Resources\Images\Comparison\Remodel_ItemList_Normal.bmp" />
+    <Resource Include="Resources\Images\Comparison\Remodel_ItemList_Other_Decide.bmp" />
+    <Resource Include="Resources\Images\Comparison\Remodel_Remodel_False.bmp" />
+    <Resource Include="Resources\Images\Comparison\Remodel_Remodel_True.bmp" />
+    <Resource Include="Resources\Images\Comparison\Repair.bmp" />
+    <Resource Include="Resources\Images\Comparison\Repair_ShipSelect.bmp" />
+    <Resource Include="Resources\Images\Comparison\Repair_SortByNew.bmp" />
+    <Resource Include="Resources\Images\Comparison\Repair_Start_False.bmp" />
+    <Resource Include="Resources\Images\Comparison\Repair_Start_True.bmp" />
+    <Resource Include="Resources\Images\Comparison\Sally.bmp" />
+    <Resource Include="Resources\Images\Comparison\Supply.bmp" />
+    <Resource Include="Resources\Images\woflagship_q.ico" />
+    <Resource Include="Resources\Images\woflagship_q.png" />
     <Content Include="Resources\PepperFlash\pepflashplayer.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

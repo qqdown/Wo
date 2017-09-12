@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,133 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Arsenal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\arsenal.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Battle_Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\battle_back.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Battle_Compass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\battle_compass.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Battle_Formation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\battle_formation.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Battle_Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\battle_next.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Battle_Night" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\battle_night.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Battle_Return" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\battle_return.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainPort" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mainport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainPort_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mainport_left.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainPort_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mainport_title.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainPort_title1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mainport_title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\map.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_Decide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\map_decide.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_Start_False" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\map_start_false.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_Start_False2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\map_start_false2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_Start_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\map_start_true.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mission" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mission.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mission_Decide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mission_decide.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mission_Start_False" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mission_start_false.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mission_Start_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\mission_start_true.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Organize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\organize.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Organize_Change_Decide_False" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\organize_change_decide_false.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Organize_Change_Decide_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\organize_change_decide_true.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Organize_ShipSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\organize_shipselect.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Organize_SortByNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\organize_sortbynew.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Practice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\practice.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\quest.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Remodel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\remodel.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Remodel_ItemList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\remodel_itemlist.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Remodel_ItemList_Decide_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\remodel_itemlist_decide_true.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Remodel_ItemList_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\remodel_itemlist_normal.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Remodel_ItemList_Other_Decide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\remodel_itemlist_other_decide.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Remodel_Remodel_False" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\remodel_remodel_false.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Remodel_Remodel_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\remodel_remodel_true.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Repair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\repair.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Repair_ShipSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\repair_shipselect.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Repair_SortByNew" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\repair_sortbynew.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Repair_Start_False" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\repair_start_false.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Repair_Start_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\repair_start_true.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sally" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\sally.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Supply" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\comparison\supply.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
