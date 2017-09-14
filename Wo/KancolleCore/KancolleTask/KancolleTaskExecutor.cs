@@ -131,6 +131,8 @@ namespace Wo.KancolleCore.KancolleTask
 
         /// <summary>
         /// 执行task,改函数进程阻塞，等到该任务被执行并返回结果。
+        /// 如果当前已经有任务正在执行，那么直接返回fail。
+        /// 线程不安全！
         /// </summary>
         /// <param name="task"></param>
         /// <returns>执行结果</returns>
@@ -149,21 +151,6 @@ namespace Wo.KancolleCore.KancolleTask
                 Thread.Sleep(500);
             return LastResult;
         }
-
-        /// <summary>
-        /// 执行task,并返回结果。
-        /// </summary>
-        /// <param name="task"></param>
-        /// <returns>执行结果</returns>
-        public async Task<KancolleTaskResult> DoTaskAsync(KancolleTask task)
-        {
-            return await Task.Run<KancolleTaskResult>(() =>
-            {
-                return DoTask(task);
-            });
-        }
-
-
 
         public void Start()
         {
